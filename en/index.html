@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Server Rules</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel-bg: #1a2029;
+    --panel-bg-alt: #151b23;
+    --border-color: #2a3340;
+    --text: #d6dde6;
+    --text-dim: #8b97a8;
+    --accent: #4fc3f7;
+    --accent-green: #66bb6a;
+    --accent-yellow: #ffca28;
+    --accent-red: #ef5350;
+    --accent-cyan: #26c6da;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+
+  header {
+    text-align: center;
+    padding: 24px 0 32px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 32px;
+  }
+
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+
+  header p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .section-title:first-of-type { margin-top: 0; }
+
+  .rule-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .rule-card:hover {
+    border-left-color: var(--accent-green);
+  }
+
+  .rule-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .rule-text {
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .sub-list {
+    margin: 0;
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  .sub-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    color: var(--text);
+  }
+
+  .sub-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .sub-list li:last-child { margin-bottom: 0; }
+
+  .punish-marker {
+    background: rgba(239, 83, 80, 0.06);
+    border-left: 2px solid var(--accent-red);
+    padding: 8px 12px !important;
+    border-radius: 4px;
+    margin-left: -12px !important;
+  }
+
+  .punish-marker::before {
+    color: var(--accent-red) !important;
+  }
+
+  .highlight-red { color: var(--accent-red); font-weight: 600; }
+  .highlight-yellow { color: var(--accent-yellow); font-weight: 600; }
+  .highlight-cyan { color: var(--accent-cyan); font-weight: 600; }
+  .highlight-green { color: var(--accent-green); font-weight: 600; }
+
+  strong { color: #ffffff; font-weight: 600; }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.05rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--panel-bg);
+    border-radius: 8px;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 15px; }
+    .container { padding: 20px 14px 48px; }
+    header h1 { font-size: 1.5rem; }
+    .section-title { font-size: 1.25rem; }
+    .rule-card { padding: 14px 16px; }
+    .rule-card h3 { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>📜 Server Rules</h1>
+    <p>Current version of laws and regulations</p>
+  </header>
+
+  <!-- SECTION 1 -->
+  <div class="section-title">1. Attacks</div>
+
+  <div class="rule-card">
+    <h3>1.1. Attacking Local Players</h3>
+    <div class="rule-text">It is forbidden to attack local (server) players who are in alliances without a valid reason, except for players with the nickname <span class="highlight-yellow">Commander</span>…</div>
+    <ul class="sub-list">
+      <li>Players who are not part of an alliance may be considered a farm and attacked for resources.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>1.2. Incident Resolution and Diplomacy</h3>
+    <div class="rule-text">If there is a reason for an attack (robbery, assault, insult, provocation, etc.): the player — the person being provoked/insulted/robbed/attacked, etc. — must first of all try to resolve everything through dialogue.</div>
+    <ul class="sub-list">
+      <li>If it is not possible to find common ground/compromises, the player submits an appeal up the hierarchy (contacts their <span class="highlight-cyan">R4/R5</span>) — who then contact the representatives of the offending alliance (R4/R5) and likewise try to find common ground/compromises between the alliances in an effort to reach a fair resolution of the situation, without misunderstandings, quarrels, wars, etc.</li>
+      <li>In cases where R4/R5 cannot find a solution, R5 submits an appeal through the President to the TOP 10 council. The President is obliged to raise the matter in the TOP 10 to resolve the conflict. Time allowed for resolution: <span class="highlight-yellow">24h</span> from the moment the President is contacted.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>1.3. Ways to Prevent Conflicts</h3>
+    <div class="rule-text">Solutions for preventing conflicts may include: a duel, retaliatory robbery, an apology and/or compensation (depending on the offense and its severity).</div>
+    <ul class="sub-list">
+      <li>If a low-level player is unable to duel or strike back at the offender as compensation, the player has the right to ask a stronger player for help. The one asked is obliged to respond at their own discretion.</li>
+      <li>The offender, by decision of the council or by agreement on accepting punishment, has the right to remove their garrison (in accordance with the decisions of both sides).</li>
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> <span class="highlight-red">3 hits on the base</span> of the guilty party without collecting resources for each 1 attack. If the attack is not cancelled and the player continues hitting bases and does not react to the 3 hits — <span class="highlight-red">burning to zero</span>.</li>
+      <li class="punish-marker">If a player burns a base to zero without reason — <span class="highlight-red">burning to zero in response</span>.</li>
+      <li class="punish-marker"><span class="highlight-red">Leadership Response:</span> Depending on the severity of the rule violation, R4, R5 and council representatives, when contacted, are obliged to immediately respond to the offender and stop the violation.</li>
+      <li class="punish-marker">If a player is inadequate, i.e. causing harm to the server, the player is added to the <span class="highlight-red">"BL" (Blacklist) for 1 month</span> or until a public apology is made.</li>
+      <li>If the offender disagrees with the punishment or the President's decision: the offender has the right to file an appeal for a re-examination of the offense case and contest it within <span class="highlight-yellow">6 hours</span> after the council's decision. The council undertakes to consider the situation from both sides and issue exclusively fair decisions regarding offenders.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>1.4. Reconnaissance and Cancelled Attacks</h3>
+    <div class="rule-text">A single reconnaissance and/or a single cancelled attack is not an act of offense or a provocative action.</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><span class="highlight-red">Offense:</span> Repeated and/or frequent reconnaissance, simultaneous reconnaissance on other alliance members, as well as frequent cancelled attacks on one or more players from the same alliance — is regarded as provocative/inadequate behavior and constitutes an offense.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-title">2. Robberies</div>
+
+  <div class="rule-card">
+    <h3>2.1. Prohibition of Robbery and Rules for Accidental Actions</h3>
+    <div class="rule-text">It is forbidden to rob transport, special operations, and personal farms of local (server) players.</div>
+    <ul class="sub-list">
+      <li>In case of accidental robbery, you should contact the player who was robbed and resolve the issue peacefully to avoid further conflict (see 1.3). Waiting time for resolution: <span class="highlight-yellow">12h</span>.</li>
+      <li>An accidental robbery is an unintentional "click" on a special operation on Saturdays (at a moment when an attack on the enemy is underway and quick action is required regarding the attack on the enemy on Saturdays).</li>
+      <li>A screenshot or video showing that the enemy's castle is next to the special operation that was robbed can serve as evidence.</li>
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> If a decision is made to punish the player — <span class="highlight-red">1 hit without collecting</span>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-title">3. Tiles</div>
+
+  <div class="rule-card">
+    <h3>3.1. Prohibition of Knocking Players Off Resource Mines</h3>
+    <div class="rule-text">It is forbidden to knock a player off a tile (mine) that is occupied by another player.</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> <span class="highlight-red">3 hits without collecting</span>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section-title">4. Speech</div>
+
+  <div class="rule-card">
+    <h3>4.1. Offensive Statements</h3>
+    <div class="rule-text">It is forbidden to use offensive expressions toward anyone for provocation, self-assertion, etc. (be restrained, treat each other with mutual understanding and respect).</div>
+    <ul class="sub-list">
+      <li>4.2. It is forbidden to stir up political disputes or resort to personal attacks (do not bring the real world into the game. Want to discuss politics with someone? Go to private messages).</li>
+      <li>4.3. It is strictly forbidden to offensively touch upon family, religion, race, creed, etc., regarding yourself and/or other players.</li>
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> For gross insults and touching upon the listed topics, the player is declared <span class="highlight-red">outlawed</span>.</li>
+      <li class="punish-marker">A player who violates this rule is added to the "BL" list and is not protected by the server rules and/or any alliance. Consequently: anyone has the right to attack them until they make a public and sincere apology.</li>
+      <li class="punish-marker">If a player who violated this rule joins an alliance that actively defends them — the representatives of that alliance (R4, R5) are automatically added to the "BL" list and may be attacked by any server user until they expel the offender from the alliance (for prompt decision-making).</li>
+      <li class="punish-marker">It is forbidden for R5 and R4 to give coordinates in the server's general chat — this is a provocation for active actions. In case of violation, the issue must be resolved directly and based on the outcome of events.</li>
+      <li>If the culprit shared coordinates and nothing happened, the issue is resolved diplomatically through conversation. If it led to an attack by anyone — <span class="highlight-red">3 hits on the base without collecting</span>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section-title">5. Alliances</div>
+
+  <div class="rule-card">
+    <h3>5.1 – 5.2. Responsibility of Leaders and the "Expedition Madness" Event</h3>
+    <div class="rule-text">When creating an alliance, its leader is the responsible person for every member of their alliance and must be aware of all the hardships and cares that await them.</div>
+    <ul class="sub-list">
+      <li>The alliance leader is obliged to cooperate with other alliances (in case other alliances reach out regarding violations, respond immediately and give feedback).</li>
+      <li>They are subject to mandatory participation in the struggle regarding the <span class="highlight-cyan">"Expedition Madness"</span> event (at minimum, try to rally people and bring points to the server even without participating in the battle).</li>
+      <li class="punish-marker">If alliance representatives refuse to cooperate and resolve the issue by seeking compromises, a complaint is filed and sent to the TOP 10 council, which then issues a fair decision regarding the representatives of that alliance (average waiting time for alliance representatives' inaction: <span class="highlight-yellow">24 hours</span> from the moment contact is attempted).</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>5.3. Alliance Leader</h3>
+    <div class="rule-text">The alliance leader has the full right to seek help from other alliances (for example, for advice, or to conclude unions/world and/or mutually beneficial agreements with other alliances).</div>
+  </div>
+
+  <div class="rule-card">
+    <h3>5.4. Infringement of the Rights of Small Alliances</h3>
+    <div class="rule-text">It is forbidden to infringe upon the rights and powers of, or create threats from a strong alliance, as well as to create obstacles to the development of small alliances (Example: "Become our academy or we will burn you").</div>
+  </div>
+
+  <div class="rule-card">
+    <h3>5.5. Falsification of the Rating</h3>
+    <div class="rule-text">It is forbidden to falsify the rating by poaching players from allied alliances.</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> In case of violation of this rule, the person — i.e. the player from whom the violation originates — gives up leadership, and the rating is not counted.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section-title">6. Cities</div>
+
+  <div class="rule-card">
+    <h3>6.1. Distribution and City Limits</h3>
+    <div class="rule-text">Level 1 cities are active for actions. Cities 2–6 are distributed by agreement among the TOP 10. It is also not forbidden to transfer cities at your own discretion without taking an extra city.</div>
+    <ul class="sub-list">
+      <li><span class="highlight-yellow">Limit:</span> An alliance is entitled to 6 cities. If an alliance decides to gift a city, it retains 5 cities. It cannot take an extra city.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>6.2. Rules for Transferring Level 6 Cities</h3>
+    <div class="rule-text">Level 6 cities are transferred clockwise every week on Friday at 15:00 (the TOP 3 may agree on the time in advance).</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><span class="highlight-red">Violation:</span> If this rule is violated, all combat actions cease for <span class="highlight-yellow">24 hours</span>.</li>
+      <li>The alliance affected by the violation files an appeal to the council, where the council, at its discretion (mandatorily reviewing evidence from both sides and relying on the rulebook), issues a fair decision to prevent conflicts.</li>
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> Up to and including transferring the city to the attacking alliance, if the violation came from the alliance defending the city.</li>
+      <li class="punish-marker">An alliance that violated the rule is forbidden to conduct combat actions against that city again for a period of <span class="highlight-red">7 days</span>.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>6.3. Rating Snapshot and Distribution</h3>
+    <div class="rule-text">The rating is recorded daily at 19:00 MSK and sent to the Lolka leaders chat. Whichever alliance was more often higher in the rating during the week takes the corresponding TOP city.</div>
+    <ul class="sub-list">
+      <li><span class="highlight-cyan">Exception: Saturday</span> — due to the VS and Madness events, the snapshot is taken at <span class="highlight-yellow">16:00</span> and <span class="highlight-yellow">19:00</span>.</li>
+      <li>In case of disputes, the difference of <span class="highlight-cyan">100 million BM</span> is used as the deciding factor.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section-title">7. Prohibition of Sedition</div>
+
+  <div class="rule-card">
+    <h3>7.1. Contracted Attacks and Cross-Server Hiring</h3>
+    <div class="rule-text">It is forbidden to stir up sedition on the server, to hire players to burn others from alliances on another server.</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><span class="highlight-red">Punishment:</span> Unconditional <span class="highlight-red">exclusion from the NAP</span>.</li>
+    </ul>
+  </div>
+
+  <!-- IMPORTANT NOTES -->
+  <div class="section-title">✦ Important Notes and Terms</div>
+
+  <div class="rule-card">
+    <h3>General Provisions and Server Concepts</h3>
+    <div class="rule-text">Every player on the server is subject to the rules, without any exceptions.</div>
+    <ul class="sub-list">
+      <li>Before adopting rules or making any changes to their structure, the decision is made by a council of the <span class="highlight-yellow">TOP 10 alliances</span> of the server.</li>
+      <li><strong>Tiles</strong> — resource mines on the global map.</li>
+      <li><strong>Buff</strong> — a % bonus from the Capitol/city/skill minister.</li>
+      <li class="punish-marker"><span class="highlight-red">BL (Blacklist):</span> Players on it are players who are on the verge of being <strong>OUTLAWED</strong>, but have a <span class="highlight-yellow">7-day</span> period to fix the situation. After 7 days, a player who has not improved their position automatically becomes outlawed.</li>
+    </ul>
+  </div>
+
+  <!-- PRESIDENT AND COUNCIL -->
+  <div class="section-title">👑 President, Entourage, Vice President, Capitol Struggle, Rewards, and Council</div>
+
+  <div class="rule-card">
+    <h3>1. Election and Powers of the President</h3>
+    <div class="rule-text">The President is the primary representative figure at the level of other server representatives and undertakes to be fair and to strive for the well-being of their server.</div>
+    <ul class="sub-list">
+      <li><strong>1.1. Election:</strong> The President is chosen by a decision of a council of several alliances, or follows the established pattern among the TOP 3 of passing the Capitol from hand to hand among the TOP 3 alliances.</li>
+      <li><strong>1.2. Rights:</strong> Has the full right to conclude unions with other servers, as well as to appoint a Vice President, issue presidential rewards, vote, and — with the approval of a council of 5 — may introduce amendments to the rules.</li>
+      <li class="punish-marker"><strong>1.3. Removal:</strong> If the President is inactive and/or inadequate, or violates server rules — all such matters are brought before the council, after which the President is removed from office for an indefinite period. Their place is taken by a person from their entourage.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>2. President's Entourage</h3>
+    <div class="rule-text">To ease their duties, the President has the full right to create an entourage of 3 people who are obliged to help both the President and the council (keep order, make decisions, develop tactics for the Capitol struggle, and much more).</div>
+    <ul class="sub-list">
+      <li class="punish-marker"><strong>Equality before the law:</strong> The entourage is nothing special and has no privileges in the form of exceptions to any of the server rules, and bears responsibility just like ordinary players (the same applies to the President and the council).</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>3. Vice President</h3>
+    <div class="rule-text">A Vice President is a specific person appointed who, at the request of players, simply moves them up the queue for ministers.</div>
+    <ul class="sub-list">
+      <li>As such, they have no major assignments.</li>
+    </ul>
+  </div>
+
+  <div class="rule-card">
+    <h3>4. Capitol, Capitol Struggle, and Rewards</h3>
+    <div class="rule-text">4.1. The Capitol is one of the important structures for the server, where the President is the representative figure of the server. The Capitol stores rewards issued by the President, as well as the ability to take a minister position to use a buff for something related to the development of your castle.</div>
+    <ul class="sub-list">
+      <li>Any server user has the right to take a minister position, regardless of castle level or contribution to the server.</li>
+    </ul>
+    <br>
+    <div class="rule-text">4.2. Regarding the struggle for the Capitol, every alliance is obliged to fight to the best of its abilities.</div>
+    <ul class="sub-list">
+      <li>The struggle is not only the battle itself but also bringing points to the server throughout the entire week during which the "Expedition Madness" event takes place (winning Pandora, robbing the needed transport, winning VS, dealing damage, and much more). The President, in turn, undertakes to support and rally players by publishing information about this event through presidential mail.</li>
+      <li><span class="highlight-green">In case of victory:</span> If the enemy server is defeated, the local server receives gifts in the form of envelopes with diamonds, diamond mines, as well as 2 additional Capitol minister positions that have slightly more buffs for the development of your castle.</li>
+      <li><span class="highlight-yellow">In case of defeat:</span> In case of defeat, your server loses nothing and retains the minister positions of its own Capitol.</li>
+    </ul>
+  </div>
+
+  <footer>
+    💪 The server rulebook has been successfully completed!
+  </footer>
+
+</div>
+
+</body>
+</html>
